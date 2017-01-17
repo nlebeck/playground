@@ -1,0 +1,2 @@
+USE menagerie;
+SELECT * FROM pet WHERE TIMESTAMPDIFF(YEAR, birth, CURDATE()) > 26;
