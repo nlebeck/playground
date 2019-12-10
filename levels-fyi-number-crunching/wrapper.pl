@@ -20,7 +20,6 @@ my $combineArgs = "";
 for my $name (@names) {
     $combineArgs = $combineArgs . " $TEMP_DIR/$name.csv";
 }
-print("$combineArgs\n");
 
 system("perl combine-files.pl $combineArgs > $TEMP_DIR/combined.csv");
 system("Rscript graph-data.R $TEMP_DIR/combined.csv output/graph");

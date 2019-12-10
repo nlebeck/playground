@@ -18,6 +18,8 @@ outputPrefix = args[2]
 
 data = read.csv(inputFile, header=TRUE)
 
+pdf(NULL)
+
 ggplot(data) +
     geom_violin(aes(x = name, y = base)) +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
@@ -38,4 +40,5 @@ ggplot(data) +
     scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) +
     xlab("Base salary ($ / 1000)") +
     ylab("Stock ($ / 1000)")
+
 ggsave(paste0(outputPrefix, "-base-vs-stock.pdf"))
